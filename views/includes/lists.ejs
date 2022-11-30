@@ -1,0 +1,30 @@
+<section class="items-container">
+  <h3 class="list-title"><%= listItem.listName %>  </h3>
+  <form data-listid="<%=listItem._id%>" class="add-item-form">
+    <div class="add-item-field">
+      <label for="add-iem">add item</label>
+      <input type="text" id="add-item" name="add-item" />
+    </div>
+    <button type="submit" name="add-item" id="add-item-btn" class="btn">
+      Add
+    </button>
+  </form>
+  <div class="doing-list-container" data-listid="<%=listItem._id%>">
+    <!-- <ul class="list-items">
+          <li class="list-item-container">
+            <p class="list-item">item1asdasdasdasd sadsa asda</p>
+            <div>
+              <button id="edit">
+                <i class="fas fa-edit function-btn"></i>
+              </button>
+              <button id="delete">
+                <i class="fas fa-trash function-btn"></i>
+              </button>
+            </div>
+          </li>
+        </ul>-->
+  </div>
+  <form action="/<%=listItem._id%>/delete" method="POST">
+    <button class="delete-list-btn list-btn">-</button> 
+  </form>
+</section>

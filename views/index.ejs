@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head", {title: "to do list"}) %> 
+  </head>
+  <body>
+    <header>
+      <h1>create list</h1>
+      <div class="add-list-btn list-btn">+</div>
+    </header>
+    <section class="add-new-list">
+      <div class="list-name-bg"></div>
+      <div class="new-list-name">
+        <form action="/add" method="POST" class="add-list-name-form">
+          <label for="listName">list name:</label>
+          <input type="text" id="list-name" name="listName" />
+          <div class="add-list-btns-container">
+            <button type="submit" id="list-name-btn" class="btn">Ok</button>
+            <button type="button" id="list-name-cancel" class="btn">Cancel</button>
+          </div>
+        </form>
+        
+      </div>
+    </section>
+    <main>
+      <% for( const list of lists ) { %>
+        <%- include("includes/lists", {listItem: list}) %>
+      <% } %> 
+    </main>
+  </body>
+</html>
